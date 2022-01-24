@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+@using (Html.BeginForm("Converter", "Currency", FormMethod.Post, new { id = "currencyForm", @class = "mt-5" }))
+{
+
+    <fieldset>
+        <h2>Converter</h2>
+
+        <div class="mb-3">
+            <label for="original" class="form-label">Original Currency</label>
+            <select id="original" class="form-select" aria-label="Default select example">
+                <option value="GEL">GEL</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="EUR">EUR</option>
+                <option value="RUB">RUB</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="destination" class="form-label">Destination Currency</label>
+            <select id="destination" class="form-select" aria-label="Default select example">
+                <option value="USD">USD</option>
+                <option value="GEL">GEL</option>
+                <option value="GBP">GBP</option>
+                <option value="EUR">EUR</option>
+                <option value="RUB">RUB</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="amountID" class="form-label">Amount</label>
+            <input type="text" class="form-control" id="amountID" aria-describedby="emailHelp">
+            <div id="amountMessages" class="form-text text-danger"> </div>
+        </div>
+        <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+
+        <br>
+        <br>
+        <div id="converterMessages" class="alert-primary">
+
+        </div>
+
+    </fieldset>
+}
